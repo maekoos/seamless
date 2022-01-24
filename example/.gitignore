@@ -1,0 +1,3 @@
+node_modules/
+jwt.private
+client/src/api.js

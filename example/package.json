@@ -1,0 +1,14 @@
+{
+  "name": "example",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "start": "seamless .",
+    "build": "cd client && npm run build",
+    "start:production": "NODE_ENV=production seamless ."
+  },
+  "dependencies": {
+    "seamless": "../"
+  }
+}

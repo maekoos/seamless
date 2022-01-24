@@ -56,8 +56,7 @@ module.exports = class Server {
 
         server.on('upgrade', (request, socket, head) => {
             this._wsServer.handleUpgrade(request, socket, head, socket => {
-                //? What does this do and is it necessary?
-                // this._wsServer.emit('connection', socket, request);
+                this._wsServer.emit('connection', socket, request);
             });
         });
     }
@@ -117,9 +116,9 @@ module.exports = class Server {
 
             const req = { reqId, session, args: data.args, };
 
-            let results;
             if (typeof fn !== 'function') throw new Error("Not a function: " + fn.toString());
-
+            
+            let results;
             try {
                 results = await fn(req);
             } catch (error) {

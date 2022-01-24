@@ -24,7 +24,7 @@ if (!isProduction) {
 }
 
 const Server = require('./Server');
-const s = new Server(config);
+const s = new Server(config, isProduction);
 
 s.listen(HOST, PORT, () => {
     console.log(`OK - Running: http://${HOST}:${PORT}/`);

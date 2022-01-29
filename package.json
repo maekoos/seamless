@@ -1,10 +1,10 @@
 {
   "name": "seamless",
-  "version": "1.0.0",
-  "main": "index.js",
+  "version": "1.0.1",
   "license": "MIT",
+  "main": "./src/index.js",
   "bin": {
-    "seamless": "src/index.js"
+    "seamless": "./src/cli.js"
   },
   "dependencies": {
     "compression": "^1.7.4",

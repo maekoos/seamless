@@ -33,9 +33,9 @@ export function init() {
     return new Promise((resolve, reject) => {
         if (ws) ws.close();
 
-        //TODO: Host and port in devlopment should be set dynamically
-        if (process.env.NODE_ENV === 'development') ws = new WebSocket('ws://' + $HOST$ + ':' + $PORT$ + '/ws/');
-        else ws = new WebSocket(`ws://${window.location.host}/ws/`);
+        const protocol = window.location.protocol === 'https:' ? 'wss:' : 'ws:';
+        if (process.env.NODE_ENV === 'development') ws = new WebSocket(`${protocol}//${$HOST$}:${$PORT$}/ws/`);
+        else ws = new WebSocket(`${protocol}://${window.location.host}/ws/`);
 
         token = localStorage.getItem('t');
 

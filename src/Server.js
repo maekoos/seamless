@@ -35,7 +35,7 @@ module.exports = class Server {
     _registerMiddlewares() {
         if (this.isProd) {
             const compression = require('compression');
-            this.app.use(compression);
+            this.app.use(compression());
         }
     }
 
@@ -117,7 +117,7 @@ module.exports = class Server {
             const req = { reqId, session, args: data.args, };
 
             if (typeof fn !== 'function') throw new Error("Not a function: " + fn.toString());
-            
+
             let results;
             try {
                 results = await fn(req);

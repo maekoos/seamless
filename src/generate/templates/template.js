@@ -35,7 +35,7 @@ export function init() {
 
         const protocol = window.location.protocol === 'https:' ? 'wss:' : 'ws:';
         if (process.env.NODE_ENV === 'development') ws = new WebSocket(`${protocol}//${$HOST$}:${$PORT$}/ws/`);
-        else ws = new WebSocket(`${protocol}://${window.location.host}/ws/`);
+        else ws = new WebSocket(`${protocol}//${window.location.host}/ws/`);
 
         token = localStorage.getItem('t');
 

@@ -1,12 +1,10 @@
 # Seamless
 
-Easier APIs.
-
 Use the [boilerplate](https://github.com/maekoos/seamless-boilerplate) to get
 started with seamless and react.
 
 ## What is seamless?
-A server-client connection to avoid boilerplate code.
+A server-client interface simplifying API-creation and usage.
 
 ```js
 // server.js:
